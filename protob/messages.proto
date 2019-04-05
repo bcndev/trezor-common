@@ -257,4 +257,30 @@ enum MessageType {
     MessageType_BinanceOrderMsg = 707 [(wire_in) = true];
     MessageType_BinanceCancelMsg = 708 [(wire_in) = true];
     MessageType_BinanceSignedTx = 709 [(wire_out) = true];
+
+    // Bytecoin
+    MessageType_BytecoinEmptyResponse = 800 [(wire_out) = true];
+    MessageType_BytecoinStartRequest = 801 [(wire_in) = true];
+    MessageType_BytecoinStartResponse = 802 [(wire_out) = true];
+    MessageType_BytecoinScanOutputsRequest = 803 [(wire_in) = true];
+    MessageType_BytecoinScanOutputsResponse = 804 [(wire_out) = true];
+    MessageType_BytecoinGenerateKeyimageRequest = 805 [(wire_in) = true];
+    MessageType_BytecoinGenerateKeyimageResponse = 806 [(wire_out) = true];
+    MessageType_BytecoinGenerateOutputSeedRequest = 807 [(wire_in) = true];
+    MessageType_BytecoinGenerateOutputSeedResponse = 808 [(wire_out) = true];
+    MessageType_BytecoinExportViewWalletRequest = 809 [(wire_in) = true];
+    MessageType_BytecoinExportViewWalletResponse = 810 [(wire_out) = true];
+    MessageType_BytecoinSignStartRequest = 811 [(wire_in) = true];
+    MessageType_BytecoinSignAddInputRequest = 813 [(wire_in) = true];
+    MessageType_BytecoinSignAddOutputRequest = 815 [(wire_in) = true];
+    MessageType_BytecoinSignAddOutputResponse = 816 [(wire_out) = true];
+    MessageType_BytecoinSignAddExtraRequest = 817 [(wire_in) = true];
+    MessageType_BytecoinSignStepARequest = 819 [(wire_in) = true];
+    MessageType_BytecoinSignStepAResponse = 820 [(wire_out) = true];
+    MessageType_BytecoinSignStepAMoreDataRequest = 821 [(wire_in) = true];
+    MessageType_BytecoinSignGetC0Request = 823 [(wire_in) = true];
+    MessageType_BytecoinSignGetC0Response = 824 [(wire_out) = true];
+    MessageType_BytecoinSignStepBRequest = 825 [(wire_in) = true];
+    MessageType_BytecoinSignStepBResponse = 826 [(wire_out) = true];
+    MessageType_BytecoinStartProofRequest = 827 [(wire_in) = true];
 }

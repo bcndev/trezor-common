@@ -1,0 +1,129 @@
+syntax = "proto2";
+package hw.trezor.messages.bytecoin;
+
+// Sugar for easier handling in Java
+option java_package = "com.satoshilabs.trezor.lib.protobuf";
+option java_outer_classname = "TrezorMessageBytecoin";
+
+message BytecoinStartRequest {
+}
+
+message BytecoinStartResponse {
+    optional bytes version = 1; // Protocol version
+    optional bytes wallet_key = 2;
+    optional bytes A_plus_sH = 3;
+    optional bytes v_mul_A_plus_sH = 4;
+    optional bytes view_public_key = 5;
+}
+
+message BytecoinScanOutputsRequest {
+    repeated bytes output_public_key = 1;
+}
+
+message BytecoinScanOutputsResponse {
+    repeated bytes Pv = 1;
+}
+
+message BytecoinGenerateKeyimageRequest {
+    optional bytes output_secret_hash_arg = 1;
+    optional uint32 address_index = 2;
+}
+
+message BytecoinGenerateKeyimageResponse {
+    optional bytes keyimage = 1;
+}
+
+message BytecoinGenerateOutputSeedRequest {
+    optional bytes tx_inputs_hash = 1;
+    optional uint32 out_index = 2;
+}
+
+message BytecoinGenerateOutputSeedResponse {
+    optional bytes output_seed = 1;
+}
+
+message BytecoinExportViewWalletRequest {
+}
+
+message BytecoinExportViewWalletResponse {
+    optional bytes audit_key_base_secret_key = 1;
+    optional bytes view_secret_key = 2;
+    optional bytes view_seed = 3;
+    optional bytes view_secrets_signature = 4;
+}
+
+message BytecoinSignStartRequest {
+    optional uint32 version = 1;
+    optional uint64 ut = 2;
+    optional uint32 inputs_size = 3;
+    optional uint32 outputs_size = 4;
+    optional uint32 extra_size = 5;
+}
+
+message BytecoinEmptyResponse {
+}
+
+message BytecoinSignAddInputRequest {
+    optional uint64 amount = 1;
+    repeated uint32 output_indexes = 2;
+    optional bytes output_secret_hash_arg = 3;
+    optional uint32 address_index = 4;
+}
+
+message BytecoinSignAddOutputRequest {
+    optional bool change = 1;
+    optional uint64 amount = 2;
+    optional uint32 dst_address_tag = 3;
+    optional bytes dst_address_S = 4;
+    optional bytes dst_address_Sv = 5;
+    optional uint32 change_address_index = 6;
+}
+
+message BytecoinSignAddOutputResponse {
+    optional bytes public_key = 1;
+    optional bytes encrypted_secret = 2;
+    optional uint32 encrypted_address_type = 3;
+}
+
+message BytecoinSignAddExtraRequest {
+    optional bytes extra_chunk = 1;
+}
+
+message BytecoinSignStepARequest {
+    optional bytes output_secret_hash_arg = 1;
+    optional uint64 address_index = 2;
+}
+
+message BytecoinSignStepAResponse {
+    optional bytes sig_p = 1;
+    optional bytes y = 2;
+    optional bytes z = 3;
+}
+
+message BytecoinSignStepAMoreDataRequest {
+    optional bytes data_chunk = 1;
+}
+
+message BytecoinSignGetC0Request {
+}
+
+message BytecoinSignGetC0Response {
+    optional bytes c0 = 1;
+}
+
+message BytecoinSignStepBRequest {
+    optional bytes output_secret_hash_arg = 1;
+    optional uint64 address_index = 2;
+    optional bytes my_c = 3;
+}
+
+message BytecoinSignStepBResponse {
+    optional bytes my_rr = 1;
+    optional bytes rs = 2;
+    optional bytes ra = 3;
+    optional bytes encryption_key = 4;
+}
+
+message BytecoinStartProofRequest {
+    optional uint32 data_size = 1;
+}

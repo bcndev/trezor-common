@@ -28393,6 +28393,19 @@
             "type": "coin",
             "wallet": []
         },
+        "misc:BCN": {
+            "links": {
+                "Github": "https://github.com/bcndev/bytecoin",
+                "Homepage": "https://bytecoin.org"
+            },
+            "marketcap_usd": 743021552,
+            "name": "Bytecoin",
+            "shortcut": "BCN",
+            "t1_enabled": "no",
+            "t2_enabled": "yes",
+            "type": "coin",
+            "wallet": []
+        },
         "misc:XRP": {
             "links": {
                 "Github": "https://github.com/ripple/rippled",

@@ -28,6 +28,19 @@
         "blockchain_link": {}
     },
     {
+        "name": "Bytecoin",
+        "shortcut": "BCN",
+        "slip44": 204,
+        "curve": "ed25519",
+        "decimals": 8,
+        "links": {
+            "Homepage": "https://bytecoin.org",
+            "Github": "https://github.com/bcndev/bytecoin"
+        },
+        "wallet": {},
+        "blockchain_link": {}
+    },
+    {
         "name": "Monero",
         "shortcut": "XMR",
         "slip44": 128,
